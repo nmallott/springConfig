@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 /**
  * Created by nicolas on 06/04/2015.
  */
-@Component
-public class MumKitchen implements Kitchen {
+@Component("mumKitchen")
+public class MumKitchen extends KitchenAction implements Kitchen {
 
     @Autowired
     @Qualifier("chefmum")
@@ -21,7 +21,12 @@ public class MumKitchen implements Kitchen {
     public Course course;
 
     @Override
-    public void prepare(){
-        chef.cook(course);
+    Chef getChef() {
+        return chef;
+    }
+
+    @Override
+    protected Course getCourse() {
+        return course;
     }
 }

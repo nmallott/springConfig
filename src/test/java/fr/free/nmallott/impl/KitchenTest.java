@@ -5,6 +5,7 @@ import fr.free.nmallott.config.Main_config;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -18,19 +19,26 @@ import static junit.framework.TestCase.assertTrue;
 public class KitchenTest {
 
     @Autowired
-    Kitchen kitchen;
+    @Qualifier("mumKitchen")
+    Kitchen mumkitchen;
+
+    @Autowired
+    @Qualifier("restaurantKitchen")
+    Kitchen restaurantkitchen;
 
     @Test
     public void testKitchenWiring() throws Exception {
 
-       assertTrue("Kitchen is null", kitchen != null);
+        assertTrue("mumKitchen is null", mumkitchen != null);
+        assertTrue("restaurantKitchen is null", restaurantkitchen != null);
 
     }
 
     @Test
     public void testCook() throws Exception {
 
-        kitchen.prepare();
+        mumkitchen.prepare();
+        restaurantkitchen.prepare();
 
     }
 }
