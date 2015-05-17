@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackageClasses = {Main_config.class, ApplePie.class})
 public class Main_config {
 
-    @Bean
+    @Bean(name = "restaurantKit")
     RestaurantKitchen restaurantKitchen(ChefConstant chefConstant, ApplePie course){
         RestaurantKitchen kitchen = new RestaurantKitchen();
         kitchen.setChef(chefConstant);

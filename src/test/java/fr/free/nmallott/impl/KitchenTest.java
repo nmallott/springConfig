@@ -23,7 +23,7 @@ public class KitchenTest {
     Kitchen mumkitchen;
 
     @Autowired
-    @Qualifier("restaurantKitchen")
+    @Qualifier("restaurantKit")
     Kitchen restaurantkitchen;
 
     @Test
