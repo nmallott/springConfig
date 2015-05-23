@@ -4,5 +4,12 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <context:annotation-config />
-    <context:component-scan base-package="fr.free.nmallott"/>
+    <context:component-scan base-package="fr.nmallott"/>
+
+    <bean id="chefsodexo" class="fr.nmallott.impl.ChefSodexo"/>
+
+    <bean id="sodexoKit" class="fr.nmallott.impl.SodexoKitchen">
+        <constructor-arg ref="chefsodexo"/>
+        <constructor-arg ref="applepie"/>
+    </bean>
 </beans>
