@@ -1,9 +1,17 @@
 package fr.nmallott.api;
 
+import java.util.List;
+
 /**
  * Created by nicolas on 06/04/2015.
  */
 public interface Kitchen {
 
-    void prepare();
+    Chef getChef();
+
+    Course getCourse();
+
+    List<String> getStock();
+
+    void setStock();
 }

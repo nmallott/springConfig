@@ -1,4 +1,4 @@
-package fr.nmallott.impl;
+package fr.nmallott.impl.chef;
 
 import fr.nmallott.api.Chef;
 import fr.nmallott.api.Course;

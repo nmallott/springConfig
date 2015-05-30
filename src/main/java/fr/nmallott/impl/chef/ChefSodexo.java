@@ -1,6 +1,7 @@
-package fr.nmallott.impl;
+package fr.nmallott.impl.chef;
 
 import fr.nmallott.api.Chef;
+import fr.nmallott.impl.chef.AbstractChef;
 
 /**
  * Created by nicolas on 06/04/2015.

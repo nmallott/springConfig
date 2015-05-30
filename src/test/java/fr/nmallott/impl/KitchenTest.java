@@ -9,13 +9,14 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static junit.framework.TestCase.assertTrue;
+import static junit.framework.Assert.assertNotNull;
+import static org.junit.Assert.assertFalse;
 
 /**
  * Created by nicolas on 06/04/2015.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration( classes = Main_config.class)
+@ContextConfiguration(classes = Main_config.class)
 public class KitchenTest {
 
     @Autowired
@@ -33,18 +34,23 @@ public class KitchenTest {
     @Test
     public void testKitchenWiring() throws Exception {
 
-        assertTrue("mumKitchen is null", mumkitchen != null);
-        assertTrue("restaurantKitchen is null", restaurantkitchen != null);
-        assertTrue("sodexokitchen is null", sodexokitchen != null);
+        assertNotNull("mumKitchen is null", mumkitchen);
+        assertNotNull("restaurantKitchen is null", restaurantkitchen);
+        assertNotNull("sodexokitchen is null", sodexokitchen);
 
     }
 
     @Test
-    public void testCook() throws Exception {
+    public void testChefInKitchen() {
+        assertNotNull("There is no chef in mumKitchen", mumkitchen.getChef());
+        assertNotNull("There is no chef in sodexo", sodexokitchen.getChef());
+        assertNotNull("There is no chef in restaurant", restaurantkitchen.getChef());
+    }
 
-        mumkitchen.prepare();
-        restaurantkitchen.prepare();
-        sodexokitchen.prepare();
+    @Test
+    public void testStockNotEmpty() throws Exception {
+        assertNotNull("There is nothin in mumKitchen stock", mumkitchen.getStock());
+        assertFalse("There is nothin in mumKitchen stock", mumkitchen.getStock().isEmpty());
 
     }
 }

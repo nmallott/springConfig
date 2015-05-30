@@ -1,6 +1,7 @@
-package fr.nmallott.impl;
+package fr.nmallott.impl.chef;
 
 import fr.nmallott.api.Chef;
+import fr.nmallott.impl.chef.AbstractChef;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -8,11 +9,12 @@ import javax.annotation.PostConstruct;
 /**
  * Created by nicolas on 06/04/2015.
  */
-@Component("chefmum")
-public class ChefMum extends AbstractChef implements Chef {
+@Component("chefconstant")
+public class ChefConstant extends AbstractChef implements Chef {
 
     @PostConstruct
     public void setup() {
-        this.name = "Mum";
+        this.name = "Constant";
     }
+
 }

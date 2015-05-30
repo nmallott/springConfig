@@ -1,13 +1,12 @@
-package fr.nmallott.impl;
+package fr.nmallott.impl.kitchen;
 
 import fr.nmallott.api.Chef;
 import fr.nmallott.api.Course;
-import fr.nmallott.api.Kitchen;
 
 /**
  * Created by nicolas on 23/05/2015.
  */
-public class SodexoKitchen extends KitchenAction implements Kitchen{
+public class SodexoKitchen extends AbstractKitchen {
 
     private Chef chef;
     private Course course;
@@ -21,17 +20,13 @@ public class SodexoKitchen extends KitchenAction implements Kitchen{
     }
 
     @Override
-    Chef getChef() {
+    public Chef getChef() {
         return chef;
     }
 
     @Override
-    protected Course getCourse() {
+    public Course getCourse() {
         return course;
     }
 
-    @Override
-    public void prepare() {
-        chef.cook(course);
-    }
 }

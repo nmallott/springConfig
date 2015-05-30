@@ -1,8 +1,8 @@
 package fr.nmallott.config;
 
-import fr.nmallott.impl.ApplePie;
-import fr.nmallott.impl.ChefConstant;
-import fr.nmallott.impl.RestaurantKitchen;
+import fr.nmallott.impl.chef.ChefConstant;
+import fr.nmallott.impl.course.ApplePie;
+import fr.nmallott.impl.kitchen.RestaurantKitchen;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

@@ -1,14 +1,13 @@
-package fr.nmallott.impl;
+package fr.nmallott.impl.kitchen;
 
 import fr.nmallott.api.Chef;
 import fr.nmallott.api.Course;
-import fr.nmallott.api.Kitchen;
 
 /**
  * Created by nicolas on 17/05/2015.
  */
 //@Component("restaurantKitchen")
-public class RestaurantKitchen extends KitchenAction implements Kitchen {
+public class RestaurantKitchen extends AbstractKitchen {
 
     private Chef chef;
 
